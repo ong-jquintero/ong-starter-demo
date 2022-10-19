@@ -77,6 +77,13 @@ exports.createSchemaCustomization = async ({ actions }) => {
 
   // abstract interfaces
   actions.createTypes(/* GraphQL */ `
+    interface Sample implements Node & HomepageBlock {
+      id: ID!
+      blocktype: String
+      title: String
+      content: String
+    }
+    
     interface HomepageBlock implements Node {
       id: ID!
       blocktype: String
@@ -344,6 +351,13 @@ exports.createSchemaCustomization = async ({ actions }) => {
 
   // CMS-specific types for Homepage
   actions.createTypes(/* GraphQL */ `
+    type ContentfulHomepageSameple implements Node & Sample & HomepageBlock @dontInfer {
+      id: ID!
+      blocktype: String @blocktype
+      title: String
+      content: String
+    }
+    
     type ContentfulHomepageLink implements Node & HomepageLink @dontInfer {
       id: ID!
       href: String
