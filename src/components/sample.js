@@ -2,12 +2,12 @@ import * as React from "react"
 import { graphql } from "gatsby"
 import { Section, Container, Heading, Text } from "./ui"
 
-export default function Banner(props) {
+export default function Sample(props) {
   return (
     <Section>
       <Container>
-        <Heading>{props.title}</Heading>
-        <Text>{props.content}</Text>
+        <Heading as="h1">{props.title}</Heading>
+        <Text as="p">{props.contentBody}</Text>
       </Container>
     </Section>
   )
@@ -17,6 +17,6 @@ export const query = graphql`
   fragment SampleContent on Sample {
     id
     title
-    content
+    contentBody: content
   }
 `
