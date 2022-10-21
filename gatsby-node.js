@@ -81,7 +81,7 @@ exports.createSchemaCustomization = async ({ actions }) => {
       id: ID!
       blocktype: String
       title: String
-      content: String
+      # content: [HomepageBlock]
     }
     
     interface HomepageBlock implements Node {
@@ -355,7 +355,7 @@ exports.createSchemaCustomization = async ({ actions }) => {
       id: ID!
       blocktype: String @blocktype
       title: String
-      content: String
+      # content: [HomepageBlock]
     }
     
     type ContentfulHomepageLink implements Node & HomepageLink @dontInfer {
