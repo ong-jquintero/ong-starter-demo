@@ -351,7 +351,7 @@ exports.createSchemaCustomization = async ({ actions }) => {
 
   // CMS-specific types for Homepage
   actions.createTypes(/* GraphQL */ `
-    type ContentfulHomepageSample implements Node & Sample & HomepageBlock @dontInfer {
+    type ContentfulSample implements Node & Sample & HomepageBlock @dontInfer {
       id: ID!
       blocktype: String @blocktype
       title: String
